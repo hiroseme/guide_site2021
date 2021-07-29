@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.customer_form {
+    font-size:50px;
+}
+.connected_msg {
+    text-align: center;
+    color: darkgrey;
+    margin:0.5rem;
+    font-size:15px;
+}
+
+.not_connected_msg {
+    text-align: center;
+    color: red;
+}
+
+body {
+    width: 50rem;
+    margin: 0 auto;
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top:0.3rem;
+    padding-bottom:0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.nav_navy {
+    background-color:#264653;
+}
+
+.a_nav {
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+    float:right;
+    font-family: 'Nunito', sans-serif;
+}
+
+.a_nav:hover{
+    color:#F4A261;
+}
+
+.a_nav_clicked {
+    color:#2A9D8F;
+}
+
+.a_nav_clicked:hover{
+    color:#2A9D8F;
+}
+
+.a_nav2 {
+    text-decoration: none;
+    color: grey;
+    font-family: 'Nunito', sans-serif;
+    font-size:13px;
+    margin-left:1rem;
+    margin-right:1rem;
+}
+
+.a_nav2:hover {
+    color:#2A9D8F;
+}
+
+.nav_container {
+    width:100%;
+    height:3rem;
+}
+
+.head-img {
+    background-image: url('https://images.unsplash.com/photo-1547314283-befb6cc5cf29?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80');
+    background-size: 100%;
+    background-position: center;
+    width: 100%;
+    height: 10rem;
+    padding-top: 2rem;
+}
+
+.h1_head {
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    color:#F4A261;
+    font-weight: lighter;
+}
+
+.h2_head {
+    font-size:2rem;
+    text-align:center;
+    color:#E76F51;
+    font-family: 'Nunito', sans-serif;
+    margin-top:0;
+}
+
+
+.welcome_msg {
+    width:20rem;
+    float:left;
+    height:16rem;
+}
+
+.search_nav {
+    float:left;
+    margin-left:1rem;
+}
+
+.search_text_nav {
+    color: grey;
+    padding: 5px;
+    border-radius:20px;
+    border-color: #F4A261;
+    height:50%;
+    margin-top:0.6rem;
+    margin-bottom:0.6rem;
+}
+
+.search_text_nav:focus{
+    color:black;
+}
+
+.search_btn_nav {
+    background-color:#F4A261;
+    border-radius:20px;
+    border-color:#F4A261;
+    cursor:pointer;
+}
+
+.search_btn_nav:hover {
+    border-color:saddlebrown;
+}
+
+.search_btn_nav:active {
+    background-color:saddlebrown;
+    border-color:saddlebrown;
+}
+
+.search_places_container{
+    width:34.5rem;
+    background-color:#E9C46A;
+    height:3rem;
+    border-radius:0.5rem;
+}
+
+.search_places {
+    float:left;
+    margin-left:0.5rem;
+    margin-top:0.5rem;
+}
+
+.search_text_places {
+    width:30rem;
+    font-size:1rem;
+    padding:0.25rem;
+    color:grey;
+    margin-left:0.5rem;
+    border-style:inset;
+    margin-right:0;
+    border-right:0;
+    border-radius: 0.5rem 0 0 0.5rem;
+    float:left;
+}
+
+.search_btn_places_container {
+    width:3rem;
+    margin:0.1rem 0 0 0;
+    height:1.9rem;
+    display:inline;
+    float:left;
+    background-color:#264653;
+    text-align:center;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius:0.5rem;
+}
+
+.search_btn_places {
+    height:1.9rem;
+    margin:0;
+    background-color:#264653;
+    border:none;
+    font-size:1.3rem;
+    border-radius:1rem;
+    cursor:pointer;
+
+}
+
+.logo_img {
+    margin:0 0 0 1rem;
+    display:inline-block;
+    height:inherit;
+    float:left;
+}
+
+.welcome_p {
+    color:grey;
+    text-align:center;
+    margin-top:2rem;
+}
+
+.container1 {
+    width:100%;
+    height:18rem;
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+
+.w30 {
+    width:13rem;
+    display:inline-block;
+    padding:1rem;
+    margin:0.5rem;
+    height:15rem;
+}
+
+.w30:hover {
+    background-color:rgba(244, 162, 97,0.3);
+}
+
+.float_left {
+    float:left;
+}
+
+.float_right {
+    float:right;
+}
+
+.margin_middle {
+    margin-left:1.5rem;
+}
+
+.profile_img {
+    width:13rem;
+    height:13rem;
+    border-radius:6rem;
+    object-fit:cover;
+}
+
+.column_left {
+    width:14rem;
+    float:left;
+    display:inline-block;
+    min-height:50rem;
+    padding:0.3rem;
+    border: 0.2rem solid #264653;
+}
+
+.column_right {
+    width:34.5rem;
+    display:inline-block;
+    float:right;
+    min-height:50rem;
+    margin-left:0.5rem;
+}
+
+.account_btn {
+    background-color:#2A9D8F;
+    padding:1rem;
+    border-radius:1.5rem;
+    text-align:center;
+    width:9rem;
+    text-decoration:none;
+    color:black;
+}
+
+.user_login_container {
+    width:20rem;
+    margin-bottom:3rem;
+    display:inline;
+    float:left;
+}
+
+.places_header {
+    color:grey;
+    text-align:left;
+    width:50rem;
+    display:block;
+    margin-left:1rem;
+    font-size:2.5rem;
+}
+
+.filter_header {
+    text-align:center;
+    color:white;
+    background-color:#264653;
+    margin:0;
+    font-family: 'Nunito',sans-serif;
+}
+
+.places_container_outer {
+    width:33.6rem;
+    padding:0.45rem;
+    min-height:100rem;
+}
+.places_container {
+    width:10rem;
+    min-height:20rem;
+    display:inline;
+    border-width:0.1rem;
+    padding:0.6rem;
+    float:left;
+}
+
+.places_image {
+    width:9.4rem;
+    height:9.4rem;
+    border: 0.3rem solid #2A9D8F;
+    border-bottom-width: 0;
+    border-top-right-radius: 1rem;
+    border-top-left-radius:1rem;
+    object-fit: cover;
+}
+
+.more_info {
+    position:absolute;
+    text-align:center;
+    width:10rem;
+    height:1rem;
+    font-size:1rem;
+    padding-top:4rem;
+    padding-bottom:5rem;
+    opacity:0;
+}
+
+.more_info:hover{
+    opacity:100%;
+    background-color:rgba(250,250,250,0.5);
+ }
+
+.more_info:hover~.places_text{
+    opacity:50%;
+}
+
+.places_text {
+    text-align:left;
+    padding:1rem;
+    width:7.4rem;
+    max-height:10rem;
+    border: 0.3rem solid #2A9D8F;
+    border-top-width: 0;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius:1rem;
+}
+
+.places_text_grey {
+    color:grey;
+    font-size:0.7rem;
+    line-height:0.8rem;
+    padding:0;
+    margin:0;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+.places_text_name {
+    font-size:1rem;
+    font-family: 'Nunito', sans-serif;
+    margin:0;
+    padding:0;
+    line-height:1.1rem;
+}
