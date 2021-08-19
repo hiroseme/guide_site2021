@@ -13,37 +13,82 @@ include 'connection.php';
 <body>
 <header>
     <nav class="nav_navy">
-        <div class="nav_container">
         <img class="logo_img" src="GuideSITE.png" alt="Guide Site Logo">
-            <form class="search_nav" action="search_results.php" method="post">
-                <input class="search_text_nav" type="text" value="Search... " name='search_product'
-                       onclick="value=''">
-                <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
-            </form>
+        <form class="search_nav" action="search_results.php" method="post">
+            <input class="search_text_nav" type="text" value="Search... " name='search_product'
+                   onclick="value=''">
+            <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
+        </form>
         <a class="a_nav" href="login.php"> LOGIN </a>
-        <a class="a_nav" href="index.php"> ABOUT </a>
+        <a class="a_nav" href="password_maker.php"> ABOUT </a>
             <a class="a_nav" href="places.php"> PLACES </a>
             <a class="a_nav a_nav_clicked" href="index.php"> HOME </a>
-        </div>
     </nav>
-    <nav>
-        <a class="a_nav2" href="index.php"> Northland </a>
-        <a class="a_nav2" href="index.php"> Auckland </a>
-        <a class="a_nav2" href="index.php"> Wellington </a>
-        <a class="a_nav2" href="index.php"> Waikoto </a>
-        <a class="a_nav2" href="index.php"> Bay of Plenty </a>
-        <a class="a_nav2" href="index.php"> Otago </a>
-        <a class="a_nav2" href="index.php"> Southland </a>
-    </nav>
+    <div class="nav_regions">
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='NTL' value="Northland">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='AUK' value="Auckland">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='HKB' value="Hawke's Bay">
+        </form>
+        <form class="region_button" action="places.php" method="post">
+            <input class="region_button" type='submit' name='GIS' value="Gisborne">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='WGN' value="Wellington">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='MBH' value="Marlborough">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='MWT' value="Manawatu-Wanganui">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='WKO' value="Waikato">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='BOP' value="Bay of Plenty">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='NSN' value="Nelson">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='TKI' value="Taranaki">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='TAS' value="Tasman">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='CAN' value="Canterbury">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='WTC' value="West Coast">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='OTA' value="Otago">
+        </form>
+        <form action="places.php" method="post">
+            <input class="region_button" type='submit' name='STL' value="Southland">
+        </form>
+    </div>
     <div class="head-img">
-        <h1 class="h1_head"> Find your next adventure. </h1>
+        <h1 class="h1_head"> Find your next adventure.<br>
+        <form class="search_index" action="search_results.php" method="post">
+            <input class="search_text_index" type="text" value="Search... " name='search_product'
+                   onclick="value=''">
+            <input class="search_btn_nav search_btn_index" type="submit" name="submit" value="&#x1F50D">
+        </form>
+        </h1>
     </div>
 </header>
-<main>
+<main class="main_index">
     <div>
-        <p class="welcome_p">Welcome to GuideSITE. New Zealand's most trusted tourist guide.
-            Hear real opinions from locals and tourists. Find your next adventure you will never forget.
-        Read reviews and search places to go. Be it mountains, museums or romantic retreats, GuideSITE allows you to browse through them all. </p>
+        <p class="welcome_p">Welcome to GuideSITE. New Zealand's most trusted tourist website.<br>
+            Hear real opinions from locals and tourists.<br>Find your next adventure you will never forget.<br>
+        Read reviews and search places to go.<br>Be it mountains, museums or romantic retreats, GuideSITE allows you to browse through them all. </p>
     </div>
     <div class="container1">
         <div class="w30 float_left">

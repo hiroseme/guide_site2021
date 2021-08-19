@@ -29,15 +29,16 @@ include 'connection.php';
         </div>
     </nav>
 </header>
-<main>
+<main class="main_login">
+    <div class="login_container">
     <h2>Log In</h2>
     <div class="user_login_container">
         <h3>User</h3>
-        <form name="login_form" id="login_form" method="post" action="process_login.php">
+        <form name="login_form" id="login_form" method="post" action="process_login_users.php">
             <label for="username">Username:</label>
-            <input type="text" name="username"><br>
-            <label for="password">Password:</label>
-            <input type="password" name="password"><br>
+            <input type="text" name="username"><br><br>
+            <label for="password">Password :</label>
+            <input type="password" name="password"><br><br>
             <input type="submit" name="submit" id="submit" value="Log In">
         </form>
     <h4>Don't have an account?</h4>
@@ -45,11 +46,11 @@ include 'connection.php';
     </div>
     <div class="user_login_container">
     <h3>Admin</h3>
-    <form name="login_form" id="login_form" method="post" action="process_login.php">
+    <form name="login_form" id="login_form" method="post" action="process_login_admins.php">
         <label for="username">Username:</label>
-        <input type="text" name="username"><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password"><br>
+        <input type="text" name="username"><br><br>
+        <label for="password">Password :</label>
+        <input type="password" name="password"><br><br>
         <input type="submit" name="submit" id="submit" value="Log In">
     </form>
     </div>
