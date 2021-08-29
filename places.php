@@ -17,8 +17,8 @@ $all_places_result = mysqli_query($con, $all_places_query);
     <nav class="nav_navy">
         <div class="nav_container">
             <img class="logo_img" src="GuideSITE.png" alt="Guide Site Logo">
-            <form class="search_nav" action="search_results.php" method="post">
-                <input class="search_text_nav" type="text" value="Search... " name='search_product'
+            <form class="search_nav" action="places.php" method="post">
+                <input class="search_text_nav" type="text" value="Search... " name='search_place'
                        onclick="value=''">
                 <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
             </form>
@@ -174,6 +174,15 @@ $all_places_result = mysqli_query($con, $all_places_query);
             $all_places_result = mysqli_query($con,"SELECT PlaceID, PlaceName, Town, ImageFile, placetypes.TypeName, regions.Name FROM places INNER JOIN regions ON regions.RegionID = places.RegionID INNER JOIN placetypes ON placetypes.TypeID = places.TypeID WHERE places.RegionID='STL' ORDER BY PlaceName ASC");
         }
         ?>
+        <?php
+        if (isset($_POST['search_place'])) {
+        $search_place = $_POST['search_place'];
+
+        //Query to select all places that are like the user input
+        $all_places_result = mysqli_query($con,"SELECT PlaceID, PlaceName, Town, ImageFile, placetypes.TypeName, regions.Name FROM places INNER JOIN regions ON regions.RegionID = places.RegionID INNER JOIN placetypes ON placetypes.TypeID = places.TypeID WHERE PlaceName LIKE '%$search_place%'");
+        $count = mysqli_num_rows($all_places_result);
+        }
+        ?>
     </div>
 </header>
 <main class="main_places">
@@ -209,8 +218,8 @@ $all_places_result = mysqli_query($con, $all_places_query);
     </div>
     <div class="column_right">
         <div class="search_places_container">
-        <form class="search_places" action="search_results.php" method="post">
-            <input class="search_text_places" type="text" value="Search... " name='search_product'
+        <form class="search_places" action="places.php" method="post">
+            <input class="search_text_places" type="text" value="Search... " name='search_place'
                    onclick="value=''">
             <div class="search_btn_places_container">
             <input class="search_btn_places" type="submit" name="submit" value="&#x1F50D">
@@ -254,6 +263,14 @@ $all_places_result = mysqli_query($con, $all_places_query);
             echo "Outdoors & Sport";
         } elseif (isset($_POST['cultural'])) {
             echo "Cultural";
+        } elseif (isset($_POST['search_place'])) {
+            if ($search_place == "") {
+                echo "</tr><br><h2 class='search_error_text'>Please enter something!</h2>";
+            } elseif ($count == 0) {
+                echo "</tr><br><h2 class='search_error_text'>No places matched your search...</h2>";
+            } else{
+                echo "Search Results for '".$_POST['search_place']."'";
+            }
         } else {
             echo "Discover places...";
         }
@@ -280,7 +297,3 @@ $all_places_result = mysqli_query($con, $all_places_query);
 </main>
 </body>
 </html>
-
-
-
-

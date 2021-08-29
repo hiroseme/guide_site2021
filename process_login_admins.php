@@ -14,7 +14,7 @@ $hash = $login_record['password'];
 
 $verify = password_verify($pass, $hash);
 if($verify) {
-    $_SESSION['logged_in']=1;
+    $_SESSION['logged_in_admin']=$admin;
     header("Location: login.php");
 }
 else {

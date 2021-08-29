@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+
 p {
     font-size:1.5rem;
 }
@@ -11,6 +12,10 @@ p {
     color: darkgrey;
     margin:0.5rem;
     font-size:15px;
+}
+
+.font_small{
+    font-size: 0.5rem;
 }
 
 .not_connected_msg {
@@ -41,7 +46,7 @@ body {
 }
 
 .main_more_info {
-    width:90rem;
+    width:80rem;
     padding-top:2rem;
     margin:auto;
     min-height:500rem;
@@ -123,6 +128,19 @@ body {
     height: 30rem;
     padding-top: 2rem;
     background-attachment: fixed;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.head_info_img {
+    background-size: 100%;
+    background-position: center;
+    width: 80rem;
+    height: 30rem;
+    padding-top: 2rem;
+    background-attachment: fixed;
+    margin: auto auto 3rem;
 }
 
 .h1_head {
@@ -436,26 +454,25 @@ body {
 }
 
 .info_img_container {
-    width:40rem;
-    height:40rem;
-    background-repeat: no-repeat;
+    width:80rem;
+    background-size: cover;
+    height:40vh;
     margin:auto;
-    border-radius: 1rem;
-    object-fit: cover;
-    float:left;
+    background-position: center;
 }
 
 .more_info_header {
     font-size: 2rem;
     height:3rem;
     background-color: rgba(255, 255, 255, 0.3);
-    text-align: left;
     width: 100%;
     color:black;
     font-weight: lighter;
     padding-top:1rem;
+    padding-bottom:1rem;
     padding-left:2rem;
     font-family: 'Nunito', sans-serif;
+    margin-top:25rem;
 }
 
 .login_container {
@@ -474,20 +491,27 @@ body {
     margin: 2rem auto auto;
 }
 
-.places_info_container1 {
-    width:80rem;
-    padding-left:5rem;
-    padding-right:5rem;
-    padding-top:0;
-    background-color:red;
-    min-height:50rem;
+.rating_container {
+    background-color:yellow;
+    width:28rem;
+    float:right;
+    padding-left:1rem;
+    padding-right:1rem;
+}
 
+.review_container {
+    border: solid 1px red;
+    min-height:10rem;
+    background-color:white;
 }
 
 .places_details_container {
-    width:50rem;
+    width:46rem;
+    background-color:rgba(160,150,200,0.3);
     float:left;
-    background-color:purple;
+    padding-right:1rem;
+    padding-left:1rem;
+    margin-right:2rem;
 }
 
 .description_container {
@@ -497,16 +521,6 @@ body {
     padding-left:2rem;
     padding-right:2rem;
     background-color:green;
-}
-
-.rating_star_container_outer {
-    width: 25rem;
-    min-height: 30rem;
-    background-color: pink;
-    float: right;
-    border-radius:2rem;
-    border:0.1rem solid grey;
-    padding:1rem;
 }
 
 .colour_grey {
@@ -529,4 +543,48 @@ body {
     height:9.4rem;
     margin:0.6rem;
     border: 0.3rem solid #2A9D8F;
+}
+
+.review_box {
+    height:10rem;
+}
+
+div.stars {
+    width: 270px;
+    display: inline-block;
+}
+
+input.star { display: none; }
+
+label.star {
+    float: right;
+    padding: 10px;
+    font-size: 36px;
+    color: #444;
+    transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+    content: '\f005';
+    color: #FD4;
+    transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+    color: #FE7;
+    text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+    content: '\f006';
+    font-family: 'FontAwesome';
+}
+
+.edit_places_table{
+    width:80rem;
+    background-color:red;
 }

@@ -37,7 +37,7 @@ $all_places_result = mysqli_query($con, $all_places_query);
     </form>
     <main>
         <div class="search_results_container">
-            <h1 class="search_results_head">Search Results</h1>
+            <h1 class="search_results_head">Search Results for '<?php echo $_POST['search_place']; ?>'</h1>
             <table class="menu_table">
                 <tr class="menu_table_header">
                     <?php

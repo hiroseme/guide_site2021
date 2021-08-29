@@ -1,5 +1,4 @@
 
-
 <?php
 
 include 'connection.php';
@@ -18,7 +17,7 @@ include 'connection.php';
         <div class="nav_container">
             <img class="logo_img" src="GuideSITE.png" alt="Guide Site Logo">
             <form class="search_nav" action="search_results.php" method="post">
-                <input class="search_text_nav" type="text" value="Search... " name='search_product'
+                <input class="search_text_nav" type="text" value="Search... " name='search_place'
                        onclick="value=''">
                 <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
             </form>

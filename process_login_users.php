@@ -14,7 +14,8 @@ $hash = $login_record['password'];
 
 $verify = password_verify($pass, $hash);
 if($verify){
-    header("Location: index.php");
+    $_SESSION['logged_in']=$user;
+    header("Location: login.php");
 }
 else {
     header("Location: login_error.php");

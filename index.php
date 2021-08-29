@@ -14,10 +14,11 @@ include 'connection.php';
 <header>
     <nav class="nav_navy">
         <img class="logo_img" src="GuideSITE.png" alt="Guide Site Logo">
-        <form class="search_nav" action="search_results.php" method="post">
-            <input class="search_text_nav" type="text" value="Search... " name='search_product'
+        <form class="search_nav" action="places.php" method="post">
+            <input class="search_text_nav" type="text" value="Search... " name='search_place'
                    onclick="value=''">
             <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
+
         </form>
         <a class="a_nav" href="login.php"> LOGIN </a>
         <a class="a_nav" href="password_maker.php"> ABOUT </a>
@@ -76,8 +77,8 @@ include 'connection.php';
     </div>
     <div class="head-img">
         <h1 class="h1_head"> Find your next adventure.<br>
-        <form class="search_index" action="search_results.php" method="post">
-            <input class="search_text_index" type="text" value="Search... " name='search_product'
+        <form class="search_index" action="places.php" method="post">
+            <input class="search_text_index" type="text" value="Search... " name='search_place'
                    onclick="value=''">
             <input class="search_btn_nav search_btn_index" type="submit" name="submit" value="&#x1F50D">
         </form>
