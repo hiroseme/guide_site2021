@@ -42,7 +42,19 @@ $reviewid = "$id$username";
                        onclick="value=''">
                 <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
             </form>
-            <a class="a_nav a_nav_clicked" href="login.php"> LOGIN </a>
+            <?php
+            if(isset($_SESSION['logged_in'])){
+                $username = $_SESSION['logged_in'];
+                echo "<a class='a_nav' href='login.php'> Logged in as<br>".$username." </a>";
+            }
+            elseif(isset($_SESSION['logged_in_admin'])){
+                $username_admin = $_SESSION['logged_in_admin'];
+                echo "<a class='a_nav' href='login.php'> Logged in as ".$username_admin." </a>";
+            }
+            else {
+                echo "<a class='a_nav' href='login.php'> LOGIN </a>";
+            }
+            ?>
             <a class="a_nav" href="index.php"> ABOUT </a>
             <a class="a_nav" href="places.php"> PLACES </a>
             <a class="a_nav" href="index.php"> HOME </a>
@@ -50,8 +62,9 @@ $reviewid = "$id$username";
     </nav>
 </header>
 <main class="main_login">
-    <h2>Write a review for <?php echo $this_place_record['PlaceName']?></h2>
-    <div class="user_login_container">
+    <div class="review_container2">
+        <h2>Write a review for <?php echo $this_place_record['PlaceName']?></h2>
+        <p>Reviewing as <?php echo $username ?></p>
         <form name="review_form" id="review_form" method="post" action="process_new_review.php">
             <label for="date">Date: <?php echo date("Y-m-d");?> </label>
             <input type='hidden' name='date' value='<?php echo date("Y-m-d");?>'><br>
@@ -66,7 +79,7 @@ $reviewid = "$id$username";
                 <label class="star star-2" for="star-2"></label>
                 <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
                 <label class="star star-1" for="star-1"></label>
-            </div>
+            </div><br>
             <textarea class="review_box" placeholder="Write your review here..." type="text" name="description"></textarea><br>
             <input type="hidden" name="reviewid" value="<?php echo $reviewid;?>">
             <input type="hidden" name="placeid" value="<?php echo $id;?>"><br>
