@@ -29,4 +29,15 @@ if($num===0){
 } else{
     echo $final_rating = round($rating/$num,2);
 }
+
+$all_places_query = "SELECT * FROM places";
+$all_places_result = mysqli_query($con, $all_places_query);
+
+$list = array();
+while($all_places_record = mysqli_fetch_assoc($all_places_result)){
+    array_push($list, $all_places_record['PlaceID']);
+}
+
+print_r($list);
+
 ?>

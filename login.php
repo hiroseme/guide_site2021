@@ -25,7 +25,7 @@ session_start()
             <?php
     if(isset($_SESSION['logged_in'])){
         $username = $_SESSION['logged_in'];
-        echo "<a class='a_nav a_nav_clicked font_small' href='login.php'> Logged in as<br>".$username." </a>";
+        echo "<a class='a_nav a_nav_clicked' href='login.php'> Logged in as<br>".$username." </a>";
     }
     elseif(isset($_SESSION['logged_in_admin'])){
         $username_admin = $_SESSION['logged_in_admin'];
@@ -81,7 +81,6 @@ session_start()
     </form>
     </div>";
         }?>
-
 </main>
 </body>
 </html>

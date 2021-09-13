@@ -18,6 +18,9 @@ p {
     font-size: 0.5rem;
 }
 
+.font_1rem{
+    font-size:1rem;
+}
 .not_connected_msg {
     text-align: center;
     color: red;
@@ -161,6 +164,11 @@ body {
     color:#E76F51;
     font-family: 'Nunito', sans-serif;
     margin-top:0;
+    border:0;
+}
+
+.h2_head:hover{
+    background-color:blue;
 }
 
 .regions_head {
@@ -355,7 +363,11 @@ body {
     width:20rem;
     margin-bottom:3rem;
     display:inline;
-    float:left;
+    float: left;
+}
+
+.w40 {
+    width:40rem;
 }
 
 .places_header {
@@ -373,6 +385,21 @@ body {
     background-color:#264653;
     margin:0;
     font-family: 'Nunito',sans-serif;
+}
+
+.filter_btn {
+    text-align:center;
+    width:14rem;
+    height:2rem;
+    background-color:orange;
+    font-size: 1rem;
+}
+
+.reset_btn {
+    text-align:center;
+    width:14rem;
+    text-decoration:none;
+    background-color:lightgoldenrodyellow;
 }
 
 .places_container_outer {
@@ -505,6 +532,14 @@ body {
     background-color:white;
 }
 
+.review_container2{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width:50rem;
+    height:auto;
+    padding:5rem;
+    margin: 2rem auto auto;
+}
+
 .places_details_container {
     width:46rem;
     background-color:rgba(160,150,200,0.3);
@@ -547,6 +582,7 @@ body {
 
 .review_box {
     height:10rem;
+    width:40rem;
 }
 
 div.stars {
@@ -586,5 +622,17 @@ label.star:before {
 
 .edit_places_table{
     width:80rem;
-    background-color:red;
+}
+
+.blue_link{
+    color:blue;
+    text-decoration: underline;
+    border:0;
+    font-size: 1rem;
+    background-color:white;
+}
+
+.edit_textarea {
+    width:20rem;
+    height:5rem;
 }

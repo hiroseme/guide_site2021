@@ -31,8 +31,20 @@ else {
                        onclick="value=''">
                 <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
             </form>
-            <a class="a_nav" href="login.php"> LOGIN </a>
-            <a class="a_nav" href="index.php"> ABOUT </a>
+            <?php
+            if(isset($_SESSION['logged_in'])){
+                $username = $_SESSION['logged_in'];
+                echo "<a class='font_small' href='login.php'> Logged in as<br>".$username." </a>";
+            }
+            elseif(isset($_SESSION['logged_in_admin'])){
+                $username_admin = $_SESSION['logged_in_admin'];
+                echo "<a class='a_nav' href='login.php'> Logged in as ".$username_admin." </a>";
+            }
+            else {
+                echo "<a class='a_nav' href='login.php'> LOGIN </a>";
+            }
+            ?>
+            <a class="a_nav" href="about.php"> ABOUT </a>
             <a class="a_nav a_nav_clicked" href="places.php"> PLACES </a>
             <a class="a_nav" href="index.php"> HOME </a>
         </div>
@@ -43,7 +55,12 @@ else {
         <?php
         while($row=mysqli_fetch_array($all_places_result))
         {
-            echo "&#8226;<a href='edit_places_form.php'>".$row['PlaceName']."</a><br>";
+            $placename = $row['PlaceName'];
+            echo "<form action='edit_places_form.php' method='post'>";
+            echo "&#8226;";
+            echo "<input class='blue_link' type='submit' name='PlaceName' id='PlaceName' value='$placename'>";
+            echo "</form>";
+            echo "<br>";
         }
         ?>
 </main>
