@@ -3,9 +3,11 @@
 include 'connection.php';
 session_start();
 
+//query to select all places data
 $all_places_query = "SELECT PlaceID, PlaceName, Town, ImageFile, TypeID, regions.Name FROM places INNER JOIN regions ON regions.RegionID = places.RegionID ORDER BY PlaceName ASC";
 $all_places_result = mysqli_query($con, $all_places_query);
 
+//checking a place is selected
 if (isset($_POST['PlaceName'])) {
     $placename = $_POST['PlaceName'];
 } else {
@@ -13,9 +15,11 @@ if (isset($_POST['PlaceName'])) {
     header("refresh:1; url=edit_places.php");
 }
 
+//query to select data of the selected place
 $this_place_query = "SELECT * FROM places WHERE PlaceName='".$placename."'";
 $this_place_result = mysqli_query($con, $this_place_query);
 
+//query to get all the regions details
 $all_regions_query = "SELECT * FROM regions";
 $all_regions_result = mysqli_query($con, $all_regions_query);
 
@@ -23,7 +27,7 @@ $all_regions_result = mysqli_query($con, $all_regions_query);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> GuideSITE | HOME </title>
+    <title> GuideSITE | EDIT </title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -38,6 +42,7 @@ $all_regions_result = mysqli_query($con, $all_regions_query);
                 <input class="search_btn_nav" type="submit" name="submit" value="&#x1F50D">
             </form>
             <?php
+            //checking user is logged in
             if(isset($_SESSION['logged_in'])){
                 $username = $_SESSION['logged_in'];
                 echo "<a class='font_small' href='login.php'> Logged in as<br>".$username." </a>";
@@ -57,11 +62,11 @@ $all_regions_result = mysqli_query($con, $all_regions_query);
     </nav>
 </header>
 <main class="main_places">
-    <div class="places_container_outer">
-        <div class="new_account_container">
+        <div class="edit_places_container">
             <h1 class="colour_grey">Edit <?php echo $placename; ?></h1>
             <div class="user_login_container">
                     <?php
+                    //assigning a variable to each place detail
                     while($this_place_record = mysqli_fetch_assoc($this_place_result)) {
                         $placeid = $this_place_record['PlaceID'];
                         $placename = $this_place_record['PlaceName'];
@@ -73,6 +78,7 @@ $all_regions_result = mysqli_query($con, $all_regions_query);
                         $postcode = $this_place_record['PostCode'];
                         $typeid = $this_place_record['TypeID'];
                         $image = $this_place_record['ImageFile'];
+                        //form where user can edit the details of the place
                         echo "
                     <form name='edit_place_form' id='edit_place_form' method='post' action='process_update.php'>
                     <table>
@@ -94,6 +100,7 @@ $all_regions_result = mysqli_query($con, $all_regions_query);
                     <td>
                     <select name='regionid' id='regionid' value='".$regionid."'>
                     ";
+                        //drop down menu for regions
                     while ($all_regions_record = mysqli_fetch_assoc($all_regions_result)) {
                         $option_regionname = $all_regions_record['Name'];
                         $option_regionid = $all_regions_record['RegionID'];
@@ -123,6 +130,7 @@ $all_regions_result = mysqli_query($con, $all_regions_query);
                     <td><label for='typeid'>TypeID:</label></td>
                         <td>
                         ";
+                    //radio buttons for place type
                     echo "<input type='radio' name='typeid' value='CLTR'";
                     if($typeid=='CLTR'){echo "checked='checked'";}
                     echo "><label for='typeid'>Cultural</label>
@@ -142,15 +150,30 @@ $all_regions_result = mysqli_query($con, $all_regions_query);
                     <td><label for='image'>Image File:</label></td>
                     <td><textarea class='edit_textarea' type='text' name='image'>" . $this_place_record['ImageFile'] . "</textarea></td>
                     </tr> 
-                    <tr><td><input type='submit' name='submit' id='submit' value='Update'></td></tr></table>
+                    <tr><td><input type='submit' name='submit' id='submit' value='Update'></td></tr>
+                    </table>
                     </form>
+                    <form name='delete_place_form' id='delete_place_form' method='post' action='process_delete.php'>
+                    <td><input type='submit' name='submit' id='submit' value='Delete'></td>
+                    <input type='hidden' name='placeid' value='" . $placeid . "'>
+                    </form>
+                    
                     ";
                     }
                     ?>
             </div>
         </div>
-    </div>
 </main>
+<footer>
+    <div class="footer_container">
+        <div class="footer_text">
+            <p><b>Contact Us:<br></b><br>Ph: 020 123 4567<br>Email: guidesite@info.co.nz<br>Office Hours: 7:00am ~ 5:00pm /7 days<br>PO Box:32134</p>
+            <p><b>Address:</b><br>1 Kiwi Avenue, Wellington<br></p>
+        </div>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.536516319165!2d174.77800201539225!3d-41.27542644765783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38ae2f27710d0d%3A0x2d0763d38f00974b!2sWellington%20Girls&#39;%20College!5e0!3m2!1sen!2snz!4v1632524713252!5m2!1sen!2snz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <p class="footer_small">By Megumi Hirose 2021</p>
+</footer>
 </body>
 </html>
 
